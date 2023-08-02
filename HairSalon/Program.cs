@@ -13,7 +13,7 @@ namespace HairSalon
 
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<SalonContext>(
+            builder.Services.AddDbContext<HairSalonContext>(
                               dbContextOptions => dbContextOptions
                                 .UseMySql(
                                   builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
@@ -23,7 +23,6 @@ namespace HairSalon
 
             WebApplication app = builder.Build();
 
-            // app.UseDeveloperExceptionPage();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
