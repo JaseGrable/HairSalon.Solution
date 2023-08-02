@@ -1,25 +1,19 @@
-@{
-  Layout = "_Layout";
-}
+@* @{ Layout = "_Layout"; }*@
 
-@using HairSalon.Models;
-<div>
-  <h1>Client List:</h1>
-
-  @if (@Model.Count == 0)
-  {
-    <h3>Currently, you have no clients in the database.</h3>
-  }
-  <ul>
-    @foreach (Client client in Model)
-    {
-      <p>@Html.ActionLink($"{client.client_name}", "Details", new {id = client.client_id})</p>
-    }
-  </ul>
+<div class="container">
+  <h1>Eau Clair's Salon</h1>
+</div>
+<div class="center">
+  <h2>
+    Welcome Claire! Please select what you would like to do from the options
+    below.
+  </h2>
+</div>
+<hr />
+<div class="link-container">
+  <p>@Html.ActionLink("See All Clients", "Index", "Clients")</p>
+  <p>@Html.ActionLink("See All Stylists", "Index", "Stylists")</p>
+  <p>@Html.ActionLink("Add New Client", "Create", "Clients")</p>
+  <p>@Html.ActionLink("Add New Stylist", "Create", "Stylists")</p>
 </div>
 
-
-<p>@Html.ActionLink("Add Client", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
-<p>@Html.ActionLink("Clients", "Index", "Clients")</p>
-<p>@Html.ActionLink("Stylists", "Index", "Stylists")</p>
