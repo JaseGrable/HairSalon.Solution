@@ -27,7 +27,4 @@
 - _should go here_
 
 ## License
-
-# CSharpTemplate
-
-This is a C# project template
+MIT Copyright Jase Grable 
